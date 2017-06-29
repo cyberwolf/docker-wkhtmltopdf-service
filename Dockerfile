@@ -12,4 +12,10 @@ RUN sed -i 's/^# *\(nl_BE.UTF-8\)/\1/' /etc/locale.gen && locale-gen
 RUN echo "LANGUAGE=nl_BE.UTF-8" >> /etc/default/locale
 RUN echo "LANG=nl_BE.UTF-8" >> /etc/default/locale
 
+RUN mkdir /usr/share/fonts/truetype/flanders
+
+COPY fonts/flanders/*.ttf /usr/share/fonts/truetype/flanders/
+
+RUN fc-cache
+
 USER appuser
