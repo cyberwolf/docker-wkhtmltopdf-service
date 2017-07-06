@@ -1,5 +1,7 @@
 FROM grouptree/wkhtmltopdf-service
 
+ENV DOWNLOAD_URL "http://ftp.debian.org/debian/pool/main/w/wkhtmltopdf/wkhtmltopdf-dbg_0.12.3.2-3_amd64.deb"
+
 USER root
 
 RUN apt-get update && \
